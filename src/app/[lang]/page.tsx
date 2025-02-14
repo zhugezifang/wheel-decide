@@ -51,7 +51,7 @@ export default async function Home({
       */}
       
     </main>
-    <RandomWheel />
+    <RandomWheel title="Your Random Wheel" optionParmas="Option 1,Option 2,Option 3,Option 4" />
 
     
 

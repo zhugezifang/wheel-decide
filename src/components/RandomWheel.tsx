@@ -7,10 +7,14 @@ interface HistoryItem {
   timestamp: string;
 }
 
-export default function RandomWheel({}) {
+export default function RandomWheel({
+  title,optionParmas
+}: {
+  title: string,optionParmas: string
+}) {
   const wheelCanvasRef = useRef<HTMLCanvasElement>(null);
-  const [wheelTitle, setWheelTitle] = useState('Your Random Wheel');
-  const [options, setOptions] = useState('Option 1\nOption 2\nOption 3\nOption 4');
+  const [wheelTitle, setWheelTitle] = useState(title);
+  const [options, setOptions] = useState(optionParmas.replaceAll(",","\n"));
   const [isSpinning, setIsSpinning] = useState(false);
   const [selectedResult, setSelectedResult] = useState('');
   const [history, setHistory] = useState<HistoryItem[]>([]);
@@ -179,7 +183,7 @@ export default function RandomWheel({}) {
         <div className="grid md:grid-cols-2 gap-8">
           <div className={`wheel-section space-y-6 ${!isControlsPanelVisible ? 'centered' : ''}`}>
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h1 className="text-3xl font-bold mb-6 text-center">{wheelTitle}</h1>
+              <span className="text-3xl font-bold mb-6 text-center">{wheelTitle}</span>
               <div className="wheel-container mx-auto">
                 <canvas 
                   ref={wheelCanvasRef}
