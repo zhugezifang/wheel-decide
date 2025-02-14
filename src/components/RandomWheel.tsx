@@ -95,6 +95,29 @@ export default function RandomWheel({}) {
     setHistory(newHistory);
   };
 
+  const share = () => {
+    const url = window.location.href;
+  
+    try {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url);
+        alert('copy success!');
+      } else {
+        // 兼容旧浏览器的回退方案
+        const textarea = document.createElement('textarea');
+        textarea.value = url;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('copy success!');
+      }
+    } catch (err) {
+      console.error('复制失败:', err);
+      alert('无法自动复制，请手动复制链接');
+    }
+  }
+
   const spin = () => {
     if (isSpinning) return;
 
@@ -225,7 +248,7 @@ export default function RandomWheel({}) {
                       </>
                     )}
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded-md font-medium flex items-center gap-2 hover:bg-gray-50">
+                  <button onClick={share} className="px-4 py-2 border border-gray-300 rounded-md font-medium flex items-center gap-2 hover:bg-gray-50">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
                       <polyline points="16 6 12 2 8 6"></polyline>
