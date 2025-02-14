@@ -3,6 +3,8 @@ import type { Locale } from '@/i18n/config'
 import { getPost } from "@/lib/getPost";
 import { getDictionary } from "@/i18n/get-dictionary";
 import Link from "next/link";
+import RandomWheel from "@/components/RandomWheel";
+
 
 export const runtime = 'edge'
 
@@ -49,11 +51,14 @@ export default async function Home({
       */}
       
     </main>
+    <RandomWheel />
 
-    <iframe src="/html/wheel-decide.html" allow="autoplay"  style={{ top: '0px', left: '0px',width: '100%', height: '1650px'}}></iframe>
     
+
     <section className="bg-white py-2 my-10 px-4 mx-auto max-w-5xl sm:px-6 lg:px-8">
       {/*
+        <iframe src="/html/wheel-decide.html" allow="autoplay"  style={{ top: '0px', left: '0px',width: '100%', height: '1650px'}}></iframe>
+
       <article className="prose prose-gray dark:prose-invert mx-auto">
         <div className="mt-4" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
       </article>

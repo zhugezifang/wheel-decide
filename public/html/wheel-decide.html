@@ -35,15 +35,49 @@
         .result-animation {
             animation: popIn 0.3s ease-out forwards;
         }
+        .controls-panel {
+            transition: all 0.3s ease-in-out;
+            max-width: 100%;
+            width: 100%;
+        }
+        .controls-panel.collapsed {
+            max-width: 0;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .toggle-controls {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 50;
+        }
+        @media (min-width: 768px) {
+            .wheel-section {
+                transition: all 0.3s ease-in-out;
+            }
+            .wheel-section.centered {
+                grid-column: 1 / -1;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-8">
+    <button id="toggleControls" class="toggle-controls bg-white shadow-md rounded-md p-2 hover:bg-gray-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+    </button>
+
     <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-8">
             <!-- Wheel Section -->
-            <div class="space-y-6">
+            <div class="wheel-section space-y-6">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h1 id="wheelTitle" class="text-3xl font-bold mb-6">Your Random Wheel</h1>
+                    <h1 id="wheelTitle" class="text-3xl font-bold mb-6 text-center">Your Random Wheel</h1>
                     <div class="wheel-container mx-auto">
                         <canvas id="wheelCanvas" width="500" height="500" class="w-full h-full cursor-pointer"></canvas>
                         <div class="pointer"></div>
@@ -59,7 +93,7 @@
             </div>
 
             <!-- Controls Section -->
-            <div class="space-y-6">
+            <div class="controls-panel space-y-6">
                 <div class="bg-white rounded-lg shadow-md p-6">
                     <h2 class="text-xl font-semibold mb-4">Customize Your Wheel</h2>
                     <div class="space-y-4">
@@ -294,6 +328,26 @@ Option 4</textarea>
 
         // Initial draw
         drawWheel();
+
+        // 添加折叠控制面板的功能
+        const toggleControls = document.getElementById('toggleControls');
+        const controlsPanel = document.querySelector('.controls-panel');
+        const wheelSection = document.querySelector('.wheel-section');
+        let isControlsPanelVisible = true;
+
+        toggleControls.addEventListener('click', () => {
+            isControlsPanelVisible = !isControlsPanelVisible;
+            controlsPanel.classList.toggle('collapsed', !isControlsPanelVisible);
+            wheelSection.classList.toggle('centered', !isControlsPanelVisible);
+            
+            // 更新折叠按钮图标
+            toggleControls.innerHTML = isControlsPanelVisible 
+                ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>'
+                : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>';
+        });
+
+        // 在窗口调整大小时重新绘制轮盘
+        window.addEventListener('resize', drawWheel);
     </script>
 </body>
 </html>

@@ -199,3 +199,59 @@ canvas {
         .font-playwrite-sk { font-family: 'Playwrite SK', cursive; }
         .font-playwrite-au-vic { font-family: 'Playwrite AU VIC', cursive; }
         .font-allura { font-family: 'Allura', cursive; }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        .wheel-container {
+          position: relative;
+          width: 100%;
+          max-width: 500px;
+          aspect-ratio: 1;
+        }
+        
+        .pointer {
+          position: absolute;
+          top: 50%;
+          right: -20px;
+          width: 32px;
+          height: 32px;
+          background: white;
+          transform: translateY(-50%) rotate(45deg);
+          border: 2px solid #e5e7eb;
+          border-radius: 4px;
+          z-index: 10;
+        }
+        
+        @keyframes popIn {
+          0% { transform: scale(0.8); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .result-animation {
+          animation: popIn 0.3s ease-out forwards;
+        }
+        
+        .controls-panel {
+          transition: all 0.3s ease-in-out;
+          max-width: 100%;
+          width: 100%;
+        }
+        
+        .controls-panel.collapsed {
+          max-width: 0;
+          padding: 0;
+          margin: 0;
+          opacity: 0;
+          overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+          .wheel-section {
+            transition: all 0.3s ease-in-out;
+          }
+          .wheel-section.centered {
+            grid-column: 1 / -1;
+            max-width: 800px;
+            margin: 0 auto;
+          }
+        }      
