@@ -78,16 +78,7 @@
   "nav": {
     "features": "Features",
     "menu": [
-      {"name":"Bar","href":"bar-graph-maker"},
-      {"name":"Smooth Line","href":"smooth-line-graph-maker"},
-      {"name":"Segmented Bar","href":"segmented-bar-graph-maker"},
-      {"name":"Histogram","href":"histogram-maker"},
-      {"name":"Multiple Line","href":"multiple-line-graph-maker"},
-      {"name":"Double Bar","href":"double-bar-graph-maker"},
-      {"name":"Triple Bar","href":"triple-bar-graph-maker"},
-      {"name":"Quadruple Bar","href":"quadruple-bar-graph-maker"},
-      {"name":"Mutil Bar","href":"multi-bar-graph-maker"},
-      {"name":"Stacked Bar","href":"stacked-bar-graph-maker"}
+      {"name":"Bar","href":"bar-graph-maker"}
     ],
     "more":"More Graph Maker",   
     "blog": "Blog",
@@ -121,7 +112,7 @@
     "social": "Social",
     "support": "Support",
     "company": "Company",
-    "copyright": "© 2025 Graph Maker All rights reserved.",
+    "copyright": "© 2025 Wheel Maker All rights reserved.",
     "links": {
       "features": "Features",
       "pricing": "Pricing",
@@ -151,12 +142,12 @@
     }
   },
   "metadata": {
-    "title": "Free Online Line Graph Maker AI:Generate Line Chart Simple",
-    "description": "With this Line Graph Maker,you can Easily visualize data trends with customizable graphs,enhance your presentations and reports with professional Line Plot Chart in minutes. Try it now—no sign-up required!",
+    "title": "Randome Wheel Maker | Spin the Wheel(free, no sign-up)",
+    "description": "Random Wheel Maker is a powerful tool for making decisions using a fortune wheel. It's completely free and incredibly user-friendly. Simply enter your options, spin the wheel, and let it randomly select a name or choice for you. You can easily personalize the appearance of the wheel, and save or share it with others.",
     "keywords": ""
   },
   "common": {
-    "brand": "Graph Maker",
+    "brand": "Wheel Maker",
     "loading": "Loading..."
   },
   "features": {

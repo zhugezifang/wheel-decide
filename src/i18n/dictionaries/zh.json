@@ -47,10 +47,7 @@
   "nav": {
     "features": "功能",
     "menu": [
-      {"name":"柱状图","href":"bar-graph-maker"},
-      {"name":"平滑曲线图","href":"smooth-line-graph-maker"},
-      {"name":"堆叠柱状图","href":"segmented-bar-graph-maker"},
-      {"name":"直方图","href":"histogram-maker"}
+      {"name":"柱状图","href":"bar-graph-maker"}
     ],
     "more":"其他图表制作器",   
     "blog": "博客",
@@ -84,7 +81,7 @@
     "social": "社交",
     "support": "支持",
     "company": "公司",
-    "copyright": "© 2025 Graph Maker 保留所有权利.",
+    "copyright": "© 2025 随机转盘生成器 保留所有权利.",
     "links": {
       "features": "功能",
       "pricing": "价格",
@@ -114,12 +111,12 @@
     }
   },
   "metadata": {
-    "title": "免费在线折线图生成器",
-    "description": "曲线图是一种通过连续线条连接一系列数据点的图表，用于展示变量随时间或其他有序因素的变化。通常，一条轴（通常是 x 轴）表示时间或顺序，另一条轴（通常是 y 轴）表示数据值。折线图非常适合可视化连续时间段内的变化和趋势，使观众能够快速识别数据的上升、下降或周期性变化。",
+    "title": "随机转盘生成器",
+    "description": "随机转盘生成器是一个在线网页工具，能够可生成幸运大转盘，让用户随机抽取奖项或进行决策。",
     "keywords": ""
   },
   "common": {
-    "brand": "Graph Maker",
+    "brand": "随机转盘生成器",
     "loading": "加载中..."
   },
   "features": {
