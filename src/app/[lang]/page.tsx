@@ -1,4 +1,3 @@
-import {LineGraph} from "@/components/LineGraph"
 import type { Locale } from '@/i18n/config'
 import { getPost } from "@/lib/getPost";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -15,7 +14,7 @@ export default async function Home({
 }) {
   const dict = await getDictionary(lang);
   // Bug 修复：显式声明 result 数组的类型
-  const result: { name:string, href: string }[] = [];
+  /*const result: { name:string, href: string }[] = [];
   dict.nav.menu.forEach((menu) => {
     if (menu.href === 'line-graph-maker') {
       return;
@@ -33,7 +32,7 @@ export default async function Home({
 
   // 将 Set 转换为数组
   const randomThreeArray:any = Array.from(randomThree);
-
+  */
   const post = await getPost('random-wheel-maker', lang) as unknown as { 
     title: string; 
     desc: string;
